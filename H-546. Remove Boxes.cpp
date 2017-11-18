@@ -19,7 +19,7 @@ private:
         cout << i << ' ' << j << ' ' << k << ' ' << endl;
 
         for (; i + 1 <= j && boxes[i] == boxes[i + 1]; i++, k++);
-        int res = (k + 1) * (k + 1) + memoSearch(boxes, memo, i, j, 0);
+        int res = (k + 1) * (k + 1) + memoSearch(boxes, memo, i + 1, j, 0);
         for (int m = i + 1; m <= j; m++) {
             if (boxes[i] == boxes[m])
                 res = max(res, memoSearch(boxes, memo, i + 1, m - 1, 0) + memoSearch(boxes, memo, m, j, k + 1));
