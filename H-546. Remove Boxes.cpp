@@ -16,7 +16,7 @@ private:
         if (j < i) return 0; // memo[i][j][k] = 0;
         if (i == j) return (k + 1) * (k + 1); // memo[i][j][k] = (k + 1) * (k + 1);
         if (memo[i][j][k] > 0) return memo[i][j][k];
-        cout << i << ' ' << j << ' ' << k << ' ' << endl;
+        // cout << i << ' ' << j << ' ' << k << ' ' << endl;
 
         for (; i + 1 <= j && boxes[i] == boxes[i + 1]; i++, k++);
         int res = (k + 1) * (k + 1) + memoSearch(boxes, memo, i + 1, j, 0);
@@ -30,16 +30,7 @@ private:
 
 int main() {
     Solution s;
-    vector<int> a;
-    a.push_back(1);
-    a.push_back(3);
-    a.push_back(2);
-    a.push_back(2);
-    a.push_back(2);
-    a.push_back(3);
-    a.push_back(4);
-    a.push_back(3);
-    a.push_back(1);
+    vector<int> a = {1, 3, 2, 2, 2, 3, 4, 3, 1}; // -std=c++11
     int sss = s.removeBoxes(a);
     cout << sss << endl;
 }
