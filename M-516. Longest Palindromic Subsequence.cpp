@@ -13,7 +13,7 @@ public:
         return memoDp(0, n - 1, memo, s);
     }
 
-    int memoDp(int i, int j, vector<vector<int> >& memo, string str) {
+    int memoDp(int i, int j, vector<vector<int> >& memo, string& str) {
         if (memo[i][j] != 0) return memo[i][j];
         if (i == j) return 1;
         if (i > j) return 0;
