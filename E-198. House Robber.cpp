@@ -6,20 +6,20 @@ using namespace std;
 class Solution {
 public:
     int rob(vector<int>& nums) {
-        if (nums.size() == 0) return 0;
-        if (nums.size() == 1) return nums[0];
-        
         int n = nums.size();
-        vector<int> f(n, 0);
-        f[0] = nums[0];
-        f[1] = max(nums[0], nums[1]);
-        for (int i = 2; i < n; i++)
-            f[i] = max(f[i - 1], f[i - 2] + nums[i]);
-        return f[n - 1];
+        int a = 0, b = 0;
+        for (int i = 0; i < n; i++) {
+            if (i % 2) a = max(a + nums[i], b);
+            else b = max(b + nums[i], a);
+        }
+        return max(a, b);
     }
 };
 
 int main() {
     Solution s;
-    
+    vector<int> a;
+    a.push_back(1);
+    a.push_back(1);
+    cout << s.rob(a) << endl;
 }
