@@ -24,7 +24,7 @@ class Solution {
         for (int i = 0; i < n; i++) {
             while (!s.empty() && temperatures[i] > temperatures[s.top()]) {
                 int t = s.top();
-                ret[t] = t - i;
+                ret[t] = i - t;
                 s.pop();
             }
             s.push(i);
