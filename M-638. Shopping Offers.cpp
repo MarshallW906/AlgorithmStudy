@@ -2,9 +2,15 @@
 
 using namespace std;
 
-class Solution {
-    int dp[7][7][7][7][7][7];
+/**
+ * Note: this solution is quite concise
+ *       It is DP-like, but doesn't deal with the overlapped computing
+ *       To deal with that we need to create a hashmap or something similar
+ *       But as the items count are not determined, we have to do this things
+ * seperatedly Which is annoying.
+ */
 
+class Solution {
    public:
     int shoppingOffers(vector<int>& price, vector<vector<int>>& special,
                        vector<int>& needs) {
