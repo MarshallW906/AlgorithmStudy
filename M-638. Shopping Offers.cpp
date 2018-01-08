@@ -31,7 +31,8 @@ class Solution {
                 }
             }
             if (used) {
-                res = min(res, shoppingOffers(price, special, restNeeds));
+                res = min(res, special[i][n] +
+                                   shoppingOffers(price, special, restNeeds));
             }
         }
         return res;
